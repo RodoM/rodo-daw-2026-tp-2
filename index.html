@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rick and Morty API - TP 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Rick and Morty - Personajes</h1>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Buscar personajes</h2>
+      <form id="filter-form">
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" placeholder="rick">
+        </div>
+
+        <div class="field">
+          <label for="status">Status</label>
+          <select id="status" name="status">
+            <option value="">Cualquiera</option>
+            <option value="alive">Alive</option>
+            <option value="dead">Dead</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="species">Especie</label>
+          <input type="text" id="species" name="species" placeholder="human">
+        </div>
+
+        <div class="field">
+          <label for="type">Tipo</label>
+          <input type="text" id="type" name="type" placeholder="parasite">
+        </div>
+
+        <div class="field">
+          <label for="gender">Género</label>
+          <select id="gender" name="gender">
+            <option value="">Cualquiera</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="genderless">Genderless</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </div>
+
+        <div class="field-actions">
+          <button type="submit">Buscar</button>
+          <button type="reset" id="clear-filters">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+    <p id="message" role="status"></p>
+
+    <div id="table-wrapper" class="table-wrapper hidden">
+      <table>
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Status</th>
+            <th>Especie</th>
+            <th>Tipo</th>
+            <th>Género</th>
+            <th>Origen</th>
+            <th>Ubicación</th>
+          </tr>
+        </thead>
+        <tbody id="results-body"></tbody>
+      </table>
+    </div>
+
+    <div id="pagination" class="pagination hidden">
+      <button type="button" id="prev-page">Anterior</button>
+      <span id="page-info" class="page-info"></span>
+      <button type="button" id="next-page">Siguiente</button>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
